@@ -5,18 +5,26 @@
   "targets": {
     "e2e": {
       "executor": "@nx/playwright:playwright",
-      "outputs": ["{workspaceRoot}/dist/.playwright/apps/chart-collection-e2e"],
+      "outputs": [
+        "{workspaceRoot}/dist/.playwright/apps/chart-collection-e2e"
+      ],
       "options": {
         "config": "apps/chart-collection-e2e/playwright.config.ts"
       }
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/chart-collection-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": [
+          "apps/chart-collection-e2e/**/*.{js,ts}"
+        ]
       }
     }
   },
-  "implicitDependencies": ["chart-collection"]
+  "implicitDependencies": [
+    "chart-collection"
+  ]
 }

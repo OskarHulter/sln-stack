@@ -11,12 +11,21 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
+    "paths": {
+      "@/*": [
+        "apps/chart-explorer/*"
+      ]
+    },
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "types": ["jest", "node"]
+    "types": [
+      "jest",
+      "node"
+    ],
+    "target": "esnext"
   },
   "include": [
     "**/*.ts",
@@ -25,7 +34,8 @@
     "**/*.jsx",
     "../../apps/chart-explorer/.next/types/**/*.ts",
     "../../dist/apps/chart-explorer/.next/types/**/*.ts",
-    "next-env.d.ts"
+    "next-env.d.ts",
+    "../../dist/apps/chart-explorer/src/.next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",

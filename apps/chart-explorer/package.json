@@ -1,0 +1,19 @@
+{
+  "name": "chart-explorer",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "postinstall": "prisma generate",
+    "lint": "next lint",
+    "start": "next start",
+    "db:generate": "drizzle-kit generate:sqlite",
+    "db:migrate": "tsx src/lib/db/migrate.ts",
+    "db:drop": "drizzle-kit drop",
+    "db:pull": "drizzle-kit introspect:sqlite",
+    "db:push": "drizzle-kit push:sqlite",
+    "db:studio": "drizzle-kit studio",
+    "db:check": "drizzle-kit check:sqlite"
+  }
+}

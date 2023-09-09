@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@nx/next:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/chart-explorer"
@@ -17,7 +19,9 @@
         },
         "production": {}
       },
-      "dependsOn": ["build-custom-server"]
+      "dependsOn": [
+        "build-custom-server"
+      ]
     },
     "serve": {
       "executor": "@nx/next:server",
@@ -48,7 +52,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/chart-explorer/jest.config.ts",
         "passWithNoTests": true
@@ -62,9 +68,13 @@
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/chart-explorer/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "apps/chart-explorer/src/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "build-custom-server": {
@@ -98,5 +108,7 @@
       }
     }
   },
-  "tags": ["type:app"]
+  "tags": [
+    "type:app"
+  ]
 }
