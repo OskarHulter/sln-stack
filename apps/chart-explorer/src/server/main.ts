@@ -1,7 +1,7 @@
 import { createServer } from 'http'
+import next from 'next'
 import { parse } from 'node:url'
 import * as path from 'path'
-import next from 'next'
 /*
  * This is only a minimal custom server to get started.
  * You may want to consider using Express or another server framework, and enable security features such as CORS.
@@ -10,7 +10,6 @@ import next from 'next'
  * - Express: https://github.com/vercel/next.js/tree/canary/examples/custom-server-express
  * - Hapi: https://github.com/vercel/next.js/tree/canary/examples/custom-server-hapi
  */
-
 
 // Next.js server options:
 // - The environment variable is set by `@nx/next:server` when running the dev server.

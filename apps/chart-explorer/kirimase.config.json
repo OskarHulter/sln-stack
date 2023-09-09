@@ -2,10 +2,6 @@
   "driver": "sqlite",
   "hasSrc": true,
   "provider": "better-sqlite3",
-  "packages": [
-    "drizzle",
-    "trpc",
-    "next-auth"
-  ],
+  "packages": ["drizzle", "trpc", "next-auth"],
   "preferredPackageManager": "pnpm"
 }

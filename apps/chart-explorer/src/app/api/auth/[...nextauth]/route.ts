@@ -1,12 +1,12 @@
-import { db } from "@/src/lib/db"
-import { DrizzleAdapter } from "@auth/drizzle-adapter"
-import { DefaultSession, NextAuthOptions } from "next-auth"
-import NextAuth from "next-auth/next"
-import GithubProvider from "next-auth/providers/github"
+import { db } from '@/src/lib/db'
+import { DrizzleAdapter } from '@auth/drizzle-adapter'
+import { DefaultSession, NextAuthOptions } from 'next-auth'
+import NextAuth from 'next-auth/next'
+import GithubProvider from 'next-auth/providers/github'
 
-declare module "next-auth" {
+declare module 'next-auth' {
   interface Session {
-    user: DefaultSession["user"] & {
+    user: DefaultSession['user'] & {
       id: string
     }
   }
@@ -26,7 +26,7 @@ export const authOptions: NextAuthOptions = {
       clientId: process.env.GITHUB_CLIENT_ID!,
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       clientSecret: process.env.GITHUB_CLIENT_SECRET!,
-    })
+    }),
   ],
 }
 

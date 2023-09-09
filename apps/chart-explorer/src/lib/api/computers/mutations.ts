@@ -1,6 +1,12 @@
-import { db } from "@/src/lib/db"
-import { eq } from "drizzle-orm"
-import { NewComputer, insertComputerSchema, computers, computerIdSchema, ComputerId } from "@/src/lib/db/schema/computers"
+import { db } from '@/src/lib/db'
+import {
+  ComputerId,
+  NewComputer,
+  computerIdSchema,
+  computers,
+  insertComputerSchema,
+} from '@/src/lib/db/schema/computers'
+import { eq } from 'drizzle-orm'
 
 export const createComputer = async (computer: NewComputer) => {
   const newComputer = insertComputerSchema.parse(computer)
@@ -8,7 +14,7 @@ export const createComputer = async (computer: NewComputer) => {
     const [c] = await db.insert(computers).values(newComputer).returning()
     return { computer: c }
   } catch (err) {
-    const message = (err as Error).message ?? "Error, please try again"
+    const message = (err as Error).message ?? 'Error, please try again'
     console.error(message)
     return { error: message }
   }
@@ -21,10 +27,11 @@ export const updateComputer = async (id: ComputerId, computer: NewComputer) => {
     const [c] = await db
       .update(computers)
       .set(newComputer)
-      .where(eq(computers.id, computerId!)).returning()
+      .where(eq(computers.id, computerId!))
+      .returning()
     return { computer: c }
   } catch (err) {
-    const message = (err as Error).message ?? "Error, please try again"
+    const message = (err as Error).message ?? 'Error, please try again'
     console.error(message)
     return { error: message }
   }
@@ -33,10 +40,13 @@ export const updateComputer = async (id: ComputerId, computer: NewComputer) => {
 export const deleteComputer = async (id: ComputerId) => {
   const { id: computerId } = computerIdSchema.parse({ id })
   try {
-    const [c] = await db.delete(computers).where(eq(computers.id, computerId!)).returning()
+    const [c] = await db
+      .delete(computers)
+      .where(eq(computers.id, computerId!))
+      .returning()
     return { computer: c }
   } catch (err) {
-    const message = (err as Error).message ?? "Error, please try again"
+    const message = (err as Error).message ?? 'Error, please try again'
     console.error(message)
     return { error: message }
   }

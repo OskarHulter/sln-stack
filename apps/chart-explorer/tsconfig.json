@@ -12,19 +12,14 @@
     "isolatedModules": true,
     "incremental": true,
     "paths": {
-      "@/*": [
-        "apps/chart-explorer/*"
-      ]
+      "@/*": ["apps/chart-explorer/*"]
     },
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "types": [
-      "jest",
-      "node"
-    ],
+    "types": ["jest", "node"],
     "target": "esnext"
   },
   "include": [

@@ -1,44 +1,24 @@
 {
-  "extends": [
-    "plugin:playwright/recommended",
-    "../../.eslintrc.json"
-  ],
-  "ignorePatterns": [
-    "!**/*"
-  ],
+  "extends": ["plugin:playwright/recommended", "../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*"],
   "overrides": [
     {
-      "files": [
-        "*.ts",
-        "*.tsx",
-        "*.js",
-        "*.jsx"
-      ],
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "parserOptions": {
-        "project": [
-          "apps/chart-collection-e2e/tsconfig.*?.json"
-        ]
+        "project": ["apps/chart-collection-e2e/tsconfig.*?.json"]
       },
       "rules": {}
     },
     {
-      "files": [
-        "*.ts",
-        "*.tsx"
-      ],
+      "files": ["*.ts", "*.tsx"],
       "rules": {}
     },
     {
-      "files": [
-        "*.js",
-        "*.jsx"
-      ],
+      "files": ["*.js", "*.jsx"],
       "rules": {}
     },
     {
-      "files": [
-        "src/**/*.{ts,js,tsx,jsx}"
-      ],
+      "files": ["src/**/*.{ts,js,tsx,jsx}"],
       "parserOptions": {
         "project": "apps/chart-collection-e2e/tsconfig.*?.json"
       },

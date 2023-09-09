@@ -1,8 +1,8 @@
+import { Button, FileTrigger } from 'react-aria-components' // defaultCamera = "environment"
 import styles from './ui.module.scss'
-import { FileTrigger, Button } from 'react-aria-components' // defaultCamera = "environment"
 
 /* eslint-disable-next-line */
-export interface UiProps { }
+export interface UiProps {}
 
 export function Ui(props: UiProps) {
   return (

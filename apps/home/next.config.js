@@ -1,7 +1,7 @@
 //@ts-check
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { composePlugins, withNx } = require('@nx/next');
-const { withSentryConfig } = require('@sentry/nextjs');
+const { composePlugins, withNx } = require('@nx/next')
+const { withSentryConfig } = require('@sentry/nextjs')
 
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
@@ -12,14 +12,14 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: false,
   },
-};
+}
 
 const plugins = [
   // Add more Next.js plugins to this list if needed.
   withNx,
-];
+]
 
-const nxNextConfig = composePlugins(...plugins)(nextConfig);
+const nxNextConfig = composePlugins(...plugins)(nextConfig)
 
 // Injected content via Sentry wizard below
 module.exports = withSentryConfig(
@@ -53,4 +53,4 @@ module.exports = withSentryConfig(
     // Automatically tree-shake Sentry logger statements to reduce bundle size
     disableLogger: true,
   }
-);
+)

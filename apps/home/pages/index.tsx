@@ -1,8 +1,8 @@
-import styles from './index.module.scss'
 import * as Sentry from '@sentry/nextjs'
+import styles from './index.module.scss'
 
 // Set user information, as well as tags and further extras
-Sentry.configureScope(scope => {
+Sentry.configureScope((scope) => {
   scope.setExtra('battery', 0.7)
   scope.setTag('user_mode', 'admin')
   scope.setUser({ id: '4711' })

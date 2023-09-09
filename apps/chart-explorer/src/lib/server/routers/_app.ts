@@ -1,5 +1,5 @@
-import { computersRouter } from "./computers"
-import { router } from "../trpc"
+import { router } from '../trpc'
+import { computersRouter } from './computers'
 
 export const appRouter = router({
   computers: computersRouter,

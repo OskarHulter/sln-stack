@@ -1,6 +1,6 @@
+import NextAuthProvider from '@/src/lib/auth/Provider'
+import TrpcProvider from '@/src/lib/trpc/Provider'
 import './global.css'
-import TrpcProvider from "@/src/lib/trpc/Provider"
-import NextAuthProvider from "@/src/lib/auth/Provider"
 
 export const metadata = {
   title: 'Welcome to chart-explorer',
