@@ -2,7 +2,13 @@
   "name": "@sln-stack/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "clear:deps": "rm -rf node_modules/",
+    "clear:dist": "rm -rf dist/",
+    "clear:tmp": "rm -rf tmp/",
+    "build:all": "pnpm nx run-many --parallel -target=build",
+    "skip:cache": "pnpm nx run-many --parallel -target=build --skip-nx-cache"
+  },
   "private": true,
   "dependencies": {
     "express": "~4.18.1",
@@ -35,4 +41,3 @@
     "typescript": "~5.1.3"
   }
 }
-
