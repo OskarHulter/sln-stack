@@ -8,7 +8,7 @@
     "lint:all": "pnpm nx run-many --parallel -target=lint",
     "test:all": "pnpm nx run-many --parallel -target=test",
     "clear:deps": "rm -rf node_modules/",
-    "clear:app": "rm -rf apps/chart-explorer/node_modules/",
+    "clear:app": "rm -rf apps/home/node_modules/",
     "clear:lock": "rm pnpm-lock.yaml",
     "clear:dist": "rm -rf dist/",
     "clear:tmp": "rm -rf tmp/",
