@@ -1,0 +1,102 @@
+{
+  "name": "chart-explorer",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/chart-explorer",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/chart-explorer"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "apps/chart-explorer"
+        },
+        "production": {}
+      },
+      "dependsOn": ["build-custom-server"]
+    },
+    "serve": {
+      "executor": "@nx/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "chart-explorer:build",
+        "dev": true,
+        "customServerTarget": "chart-explorer:serve-custom-server"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "chart-explorer:build:development",
+          "dev": true,
+          "customServerTarget": "chart-explorer:serve-custom-server:development"
+        },
+        "production": {
+          "buildTarget": "chart-explorer:build:production",
+          "dev": false,
+          "customServerTarget": "chart-explorer:serve-custom-server:production"
+        }
+      }
+    },
+    "export": {
+      "executor": "@nx/next:export",
+      "options": {
+        "buildTarget": "chart-explorer:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/chart-explorer/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/chart-explorer/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "build-custom-server": {
+      "executor": "@nx/js:tsc",
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/chart-explorer",
+        "main": "apps/chart-explorer/server/main.ts",
+        "tsConfig": "apps/chart-explorer/tsconfig.server.json",
+        "clean": false,
+        "assets": []
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve-custom-server": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "chart-explorer:build-custom-server"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "chart-explorer:build-custom-server:development"
+        },
+        "production": {
+          "buildTarget": "chart-explorer:build-custom-server:production"
+        }
+      }
+    }
+  },
+  "tags": ["type:app"]
+}
