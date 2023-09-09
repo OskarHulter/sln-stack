@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@sln/forms": ["packages/features/forms/src/index.ts"],
+      "@sln/forms/server": ["packages/features/forms/src/server.ts"],
+      "@sln/ui": ["packages/ui/src/index.ts"],
+      "@sln/validation": ["packages/features/validation/src/index.ts"],
+      "@sln/validation/server": ["packages/features/validation/src/server.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

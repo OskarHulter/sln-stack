@@ -1,0 +1,22 @@
+{
+  "name": "home-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/home-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/playwright:playwright",
+      "outputs": ["{workspaceRoot}/dist/.playwright/apps/home-e2e"],
+      "options": {
+        "config": "apps/home-e2e/playwright.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/home-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "implicitDependencies": ["home"]
+}
