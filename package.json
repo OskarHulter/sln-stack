@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "i:a": "pnpm install --force --no-frozen-lockfile",
+    "i:frozen": "pnpm install --no-frozen-lockfile",
+    "i:all": "pnpm install --force",
     "build:all": "pnpm nx run-many --parallel -target=build",
     "lint:all": "pnpm nx run-many --parallel -target=lint",
     "test:all": "pnpm nx run-many --parallel -target=test",
