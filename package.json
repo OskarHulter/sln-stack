@@ -7,6 +7,7 @@
     "build:all": "pnpm nx run-many --parallel -target=build",
     "lint:all": "pnpm nx run-many --parallel -target=lint",
     "test:all": "pnpm nx run-many --parallel -target=test",
+    "nx:up": "pnpm nx migrate latest",
     "prettier": "prettier  \"{apps,libs,packages}/**/*.{ts,tsx,js,json}\" --ignore-path .gitignore",
     "format:check": "pnpm prettier --check",
     "format:write": "pnpm prettier --write",
@@ -53,7 +54,7 @@
     "zod": "^3.22.2"
   },
   "devDependencies": {
-    "@nx/devkit": "^16.8.1",
+    "@nx/devkit": "16.8.1",
     "@nx/esbuild": "16.8.1",
     "@nx/eslint-plugin": "16.8.1",
     "@nx/jest": "16.8.1",
@@ -64,7 +65,7 @@
     "@nx/playwright": "16.8.1",
     "@nx/react": "16.8.1",
     "@nx/rollup": "16.8.1",
-    "@nx/storybook": "^16.8.1",
+    "@nx/storybook": "16.8.1",
     "@nx/workspace": "16.8.1",
     "@playwright/test": "^1.36.0",
     "@rollup/plugin-url": "^7.0.0",
