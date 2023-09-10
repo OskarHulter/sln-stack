@@ -2,7 +2,7 @@
 import styles from './fileUploadInput.module.css'
 //import { FileTrigger, Button } from 'react-aria-components'
 /* eslint-disable-next-line */
-export interface FileUploadInputProps { }
+export interface FileUploadInputProps {}
 
 export function FileUploadInput(props: FileUploadInputProps) {
   //const [file, setFile] = React.useState(null)

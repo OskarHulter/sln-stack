@@ -1,7 +1,6 @@
 import type { TextFieldProps } from 'react-aria-components'
 import { Input, Label, Text, TextField } from 'react-aria-components'
 
-
 // label is used as heading
 interface MyTextFieldProps extends TextFieldProps {
   label?: string
@@ -9,11 +8,13 @@ interface MyTextFieldProps extends TextFieldProps {
   errorMessage?: string
 }
 
-export function MyTextField(
-  { label, description, errorMessage, ...props }: MyTextFieldProps
-) {
+export function MyTextField({
+  label,
+  description,
+  errorMessage,
+  ...props
+}: MyTextFieldProps) {
   return (
-
     <TextField {...props}>
       <Label>{label}</Label>
       <Input />

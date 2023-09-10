@@ -1,21 +1,25 @@
 import * as Form from '@radix-ui/react-form'
-import { TypeOf, z } from 'zod'
 import { useForm } from 'react-hook-form'
+import { TypeOf, z } from 'zod'
 
 export const SupportQuestionSchema = z.object({
-  email: z.string().min(4, { message: "Must be 5 or more characters long" }).optional(),
-  question: z.string().min(4, { message: "Must be 5 or more characters long" }).optional(),
+  email: z
+    .string()
+    .min(4, { message: 'Must be 5 or more characters long' })
+    .optional(),
+  question: z
+    .string()
+    .min(4, { message: 'Must be 5 or more characters long' })
+    .optional(),
 })
 export type RegisterInput = TypeOf<typeof SupportQuestionSchema>
-
-
 
 export function FormDemo() {
   const {
     register,
     formState: { errors },
     handleSubmit,
-    getValues
+    getValues,
   } = useForm<RegisterInput>()
 
   // const onSubmitHandler: SubmitHandler<RegisterInput> = (values) => {
@@ -24,8 +28,14 @@ export function FormDemo() {
   return (
     <Form.Root className="FormRoot" onSubmit={handleSubmit(getValues)}>
       {errors.email?.message && <p>{errors.email?.message}</p>}
-      <Form.Field className="FormField"  {...register('email')}>
-        <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between' }}>
+      <Form.Field className="FormField" {...register('email')}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'baseline',
+            justifyContent: 'space-between',
+          }}
+        >
           <Form.Label className="FormLabel">Email</Form.Label>
           <Form.Message className="FormMessage" match="valueMissing">
             Please enter your email
@@ -41,7 +51,13 @@ export function FormDemo() {
 
       {errors.question?.message && <p>{errors.question?.message}</p>}
       <Form.Field className="FormField" {...register('question')}>
-        <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between' }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'baseline',
+            justifyContent: 'space-between',
+          }}
+        >
           <Form.Label className="FormLabel">Question</Form.Label>
           <Form.Message className="FormMessage" match="valueMissing">
             Please enter a question
@@ -71,10 +87,7 @@ export default FormDemo
 // /* eslint-disable-next-line */
 // export interface FormProps { }
 
-
-
 // export default function ContactForm() {
-
 
 //   return (
 //     <form onSubmit={handleSubmit(onSubmitHandler)}>
