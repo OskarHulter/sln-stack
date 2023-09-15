@@ -1,3 +1,4 @@
+"use client"
 import { useRef } from 'react'
 import { useTextField, type AriaTextFieldProps } from 'react-aria'
 

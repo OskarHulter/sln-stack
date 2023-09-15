@@ -1,8 +1,8 @@
-import { db } from '@/src/lib/db'
 import { DrizzleAdapter } from '@auth/drizzle-adapter'
 import { DefaultSession, NextAuthOptions } from 'next-auth'
 import NextAuth from 'next-auth/next'
 import GithubProvider from 'next-auth/providers/github'
+import { db } from '../../../../lib/db'
 
 declare module 'next-auth' {
   interface Session {

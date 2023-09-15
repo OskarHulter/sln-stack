@@ -21,17 +21,32 @@
       "@sln/forms": [
         "packages/features/forms/src/index.ts"
       ],
+      "@apps/chart-explorer/*": [
+        "./apps/chart-explorer/src/*"
+      ],
       "@sln/forms/server": [
         "packages/features/forms/src/server.ts"
+      ],
+      "@sln/next-lib-example": [
+        "packages/features/next-lib-example/src/index.ts"
+      ],
+      "@sln/next-lib-example/server": [
+        "packages/features/next-lib-example/src/server.ts"
       ],
       "@sln/ui": [
         "packages/ui/src/index.ts"
       ],
-      "@sln/validation": [
-        "packages/features/validation/src/index.ts"
+      "~/ui/*": [
+        "./packages/ui/src/*"
       ],
-      "@sln/validation/server": [
-        "packages/features/validation/src/server.ts"
+      "~/forms/*": [
+        "packages/features/forms/src/lib/*"
+      ],
+      "ui/*": [
+        "./packages/ui/src/*"
+      ],
+      "@sln/validation": [
+        "feature/validation/src/index.ts"
       ]
     }
   },

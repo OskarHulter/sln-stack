@@ -67,3 +67,5 @@ Nx comes with local caching already built-in (check your `nx.json`). On CI you m
 ## .zshrc
  fzf alias-finder copypath copyfile zsh-interactive-cd npm node
  $HOME/.nvm
+ 
+ flipt vs growthbook for feature flag management?

@@ -1,12 +1,7 @@
-import { db } from '@/src/lib/db'
-import {
-  ComputerId,
-  NewComputer,
-  computerIdSchema,
-  computers,
-  insertComputerSchema,
-} from '@/src/lib/db/schema/computers'
+
 import { eq } from 'drizzle-orm'
+import { db } from '../../db'
+import { NewComputer, insertComputerSchema, computers, ComputerId, computerIdSchema } from '../../db/schema/computers'
 
 export const createComputer = async (computer: NewComputer) => {
   const newComputer = insertComputerSchema.parse(computer)
